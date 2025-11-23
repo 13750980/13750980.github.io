@@ -101,7 +101,7 @@ async function recognizeFaces() {
     dis = parseFloat(results[i]["distance"])
     console.log(lab + dis)
 
-    if (lab != "unknown" && dis < 0.4) {
+    if (lab != "unknown" && dis < 1) {
       $.get(board_url + 'open');
     }
 
@@ -175,4 +175,5 @@ function getPosition(element) {
     element = element.offsetParent;
   }
   return { x: x, y: y };
+
 }
